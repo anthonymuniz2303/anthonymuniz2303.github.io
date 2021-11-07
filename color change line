@@ -1,0 +1,11 @@
+<style type="text/css">
+	body{
+	    animation: change 10s infinite;
+	}
+	@keyframes change{
+	     10%{background-color: #FFF5EE;}
+	     25%{background-color: #EDEDED;}
+	     50%{background-color: #EBEBEB;}
+	     75%{background-color: #EBEBEB;}
+	     100%{background-color: #E8E8E8;}
+</style>
