@@ -1,0 +1,126 @@
+<html>
+<head>
+<style>
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+body { margin: 0; }
+
+.columnsContainer, footer, header { position: relative; margin: 0em; }
+
+.leftColumn, .rightColumn, .fleftColumn, footer, header {  border: 1px solid  #ccc; padding: .5em; }
+
+.leftColumn { margin-bottom: .5em; }
+
+
+@media screen and (min-width: 47.5em ) {
+  .leftColumn { margin-right: 19.5em; }
+  .leftColumn { margin-left: 19.5em; }
+	.fleftColumn { position: absolute; top: 0; left: 0; width: 18.75em; } 
+	.rightColumn { position: absolute; top: 0; right: 0; width: 18.75em; }   
+}
+	.container{
+	    animation: change 10s infinite;
+	}
+	@keyframes change{
+	     100%{background-color: white;}
+	     25%{background-color: silver;}
+	     50%{background-color: gray;}
+	     75%{background-color: silver;}
+	     100%{background-color: white;}
+
+</style>
+<style>
+
+      .container {
+        text-align: center;
+      }
+      h1 {
+        display: inline-flex;
+        padding: 24px;
+        font-size: 50px;
+        background-color: black;
+        color: #fff;
+      }
+.imgframe
+    { background:black;
+    padding:2px;
+    border:1px solid #999; }
+
+</style>
+	
+
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Project Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script type = "text/javascript">
+          function displayNextImage() {
+              x = (x === images.length - 1) ? 0 : x + 1;
+              document.getElementById("img").src = images[x];
+          }
+
+          function displayPreviousImage() {
+              x = (x <= 0) ? images.length - 1 : x - 1;
+              document.getElementById("img").src = images[x];
+          }
+
+          function startTimer() {
+              setInterval(displayNextImage, 3000);
+          }
+
+          var images = [], x = -1;
+          images[0] = "img/dog2.jpg";
+          images[1] = "img/dog1.jpg";
+          images[2] = "img/dog3.jpg";
+      </script>
+
+  </head>
+  
+   <body onload = "startTimer()">
+
+
+    <div class="container">
+  	<h1>My Personal Blog</h1>
+</div>
+    
+    <header>
+<p style="font-family:verdana"><b>A place where I will write about my thoughts. Whether it be about the news, products, or my very own life. (Not Really)</b></p>
+<p style="font-family:verdana"><small>Author: Anthony Muniz</small></p>
+    </header>
+
+  	<div class="columnsContainer">
+
+	  	<div class="leftColumn">
+	  		<h2>An Introduction, and maybe more?</h2>
+
+				<p>Hello, my name is Anthony Muniz and I am a senior at the Adamson Collegiate Academy. With the previous courses I have taken, I somewhat have an understandinmg when it comes to coding. However, I wish to further expand my knowledge on coding so that I may consider it as a career.</p>
+
+				<p> Besides the formal introduction, I have no idea what to write about for this blog. So, to make it seem less "empty" I'll just talk about my dogs.</p>
+
+				<p>When I was about 7 years old, I got my first dog. He was and is a white chihuahua with brown spots all over. At the time, he was only a puppy, but he was very energetic. He would run all over the house and even managed to climb over most chain-link fences, which became an issue. A year passes, and he still is as energetic as he was. The only difference now was that we were getting complaints about his "spiderlike" tendencies. </p>
+
+				<p>To try and calm his tendencies, we got another puppy. A blonde and fluffy chihuahua, who for some reason could not bark. They got used to each other surprisingly quickly and would play for hours. The complaints stopped, and now they are both two elderly dogs who seem to just nag at each other with their old age. </p>
+
+				<p>Since then. we have gotten another two dogs who are less than 3 years old.</p>
+
+	  	</div>
+
+	  	<div class="rightColumn">
+	  		<h2 style="font-family:verdana"><center>Calendar</center></h2>
+	<iframe src="https://calendar.google.com/calendar/embed?height=300&wkst=1&bgcolor=%234285F4&ctz=America%2FChicago&showTz=0&showCalendars=0&showTabs=0&showPrint=0&showDate=1&showNav=0&showTitle=0" style="border:solid 1px #777" width="257" height="300" frameborder="0" scrolling="no"></iframe>
+	  	</div>
+	<div class="fleftColumn">
+<img id="img" src="img/dog2.jpg" alt="Gio" style="float:left;width:280px;height:375px;"class="imgframe">
+</div>
+
+    
+    <footer>
+  		<p><center><a href="mailto:anthonymuniz02@gmail.com">Contact Us</a> | <a href="https://corp.trialcard.com/privacy-policy/?gclid=Cj0KCQiAhMOMBhDhARIsAPVml-Fe7AQxv5qgcQsS5dQkxnoTNBFWuiyVfA4m_PsUfWGtJDnQJ78MwfYaAkVAEALw_wcB">Privacy Policy</a></center></p>
+  		<p><center><small>&copy; Copyright 2021, Random text for copyright</small></center></p>
+  	</footer>
+
+  </body>
+</html>
