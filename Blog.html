@@ -5,9 +5,12 @@
   -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
 }
 
-body { margin: 0; }
+<!--body { margin: 0; }-->
 
-.columnsContainer, footer, header { position: relative; margin: 1em; }
+ header { position: relative; margin: 1em; }
+
+footer {position:fixed;bottom:0;left:0;right:0;height:50px; 
+  }
 
 .leftColumn, .rightColumn, .fleftColumn, footer, header {  border: 1px solid  #ccc; padding: .5em; }
 
@@ -17,27 +20,30 @@ body { margin: 0; }
 @media screen and (min-width: 47.5em ) {
   .leftColumn { margin-right: 19.5em; }
   .leftColumn { margin-left: 19.5em; }
-	.fleftColumn { position: absolute; top: 0; left: 0; width: 18.75em; } 
-	.rightColumn { position: absolute; top: 0; right: 0; width: 18.75em; }   
+	.fleftColumn { position: absolute; top: 370px; left: 0; width: 18.75em; } 
+	.rightColumn { position: absolute; top: 370px; right: 0; width: 18.75em; }   
 }
-	.container, .fleftColumn, .rightColumn{
-	    animation: change 10s infinite;
-	}
-	@keyframes change{
-	     100%{background-color: white;}
-	     25%{background-color: silver;}
-	     50%{background-color: gray;}
-	     75%{background-color: silver;}
-	     100%{background-color: white;}
+	.container, .fleftColumn, .rightColumn, footer{
+    background-color: rgba(0,0,0,.4);
+    color: #fff;
+}
 
 </style>
 <style>
-body {
-background-color: #FBFCFC;
+.video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+    z-index: -1;
 }
-footer {
-background-color: silver;
+.vid {
+  position: relative;
+  right: 7%;
 }
+
 
 .leftColumn {
 background-color: silver;
@@ -55,18 +61,74 @@ background-color: silver;
         background-color: black;
         color: #fff;
       }
-      .p {
+	h3 {
+ 
+        padding: 2px;
+        font-size: 15px;
+        background-color: black;
+        color: #fff;
+      }
+      .p{
         display: inline-flex;
         padding: 3px;
         font-size: 16px;
         background-color: #FBFCFC;
         color: black;
       }
+	li {
+        padding: 3px;
+        font-size: 16px;
+        background-color: #FBFCFC;
+        color: black;
+
+}
+
 .imgframe
     { background:black;
     padding:2px;
     border:1px solid #999; }
+.test, .col
+{
+ background:black;
+    padding:1px;
+    border:1px solid #999; 
+        text-align: center;
+      }
+.ME
+{
+        text-align: center;
+      }
 
+</style>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.col {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+a:link, a:visited {
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: grey;
+}
 </style>
 	
 
@@ -99,8 +161,12 @@ background-color: silver;
   </head>
   
    <body onload = "startTimer()">
+<div class="video">
+<video playsinline autoplay muted loop poster="img/dog1.jpg" id="bgvid">
 
-
+  <source src="video/wave.mp4" type="video/mp4">
+</video>
+</div>
     <div class="container">
   	<h1>My Personal Blog</h1>
 </div>
@@ -115,26 +181,59 @@ background-color: silver;
 
 	  	<div class="leftColumn">
 	  		<h2>An Introduction, and maybe more?</h2>
+			<h3><center>About Me</center></h3>
 
-				<p class="p"><big>Hello, my name is Anthony Muniz and I am a senior at the Adamson Collegiate Academy. With the previous courses I have taken, I somewhat have an understandinmg when it comes to coding. However, I wish to further expand my knowledge on coding so that I may consider it as a career.
+				<p class="p"><big>Hello, my name is Anthony Muniz and I am a senior at the Adamson Collegiate Academy. With the previous courses I have taken, I somewhat have an understandinmg when it comes to coding. However, I wish to further expand my knowledge on coding so that I may consider it as a career.</big></p>
+				<h3><center>Some Things I Like</center></h3>
+				<ul>
+				<li>Going for runs</li>
+					<br>
+				<li>Playing videogames</li>
+					<br>
+				<li>Listening to music (Loathe is my favorite band)</li>
+					<br>
+				<li>Walking my many dogs</li>
+				</ul>
+				<h3><center>A Minor 'Tail' About My Dogs</center></h3>
 
-				Besides the formal introduction, I have no idea what to write about for this blog. So, to make it seem less "empty" I'll just talk about my dogs.
+				<p class="p"><big>Besides the formal introduction, I have no idea what to write about for this blog. So, to make it seem less "empty" I'll just talk about my dogs.
 
 				When I was about 7 years old, I got my first dog. He was and is a white chihuahua with brown spots all over. At the time, he was only a puppy, but he was very energetic. He would run all over the house and even managed to climb over most chain-link fences, which became an issue. A year passes, and he still is as energetic as he was. The only difference now was that we were getting complaints about his "spiderlike" tendencies. 
 
-				To try and calm his tendencies, we got another puppy. A blonde and fluffy chihuahua, who for some reason could not bark. They got used to each other surprisingly quickly and would play for hours. The complaints stopped, and now they are both two elderly dogs who seem to just nag at each other with their old age.</big></p>
+				To try and calm his tendencies, we got another puppy. A blonde and fluffy chihuahua, who for some reason could not bark. They got used to each other surprisingly quickly and would play for hours. The complaints stopped, and now they are both two elderly dogs who seem to just nag at each other with their old age.
 
-				
-				<p class="p"><big>Since then, we have gotten another two dogs who are less than 3 years old. They are definetely much larger, a beagle and husky-mix, but are much more "talkative." They bark more than the last, so thats another set of problems to face.</big></p>
+				Since then, we have gotten another two dogs who are less than 3 years old. They are definetely much larger, a beagle and husky-mix, but are much more "talkative." They bark more than the last, so thats another set of problems to face.</big></p>
 
-	  	</div>
+<div class="test">
+      <img src="img/banner.png" alt="Dog Banner" width="400" height="120">
+</div>
+<div class="row">
+  <div class="col">
+    <img src="img/dog4.jpg" alt="Shadow" width="200" height="100">
+  </div>
+  <div class="col">
+    <img src="img/dog5.jpg" alt="Luna" width="200" height="230">
+  </div>
+  <div class="col">
+    <img src="img/dog6.jpg" alt="Gio" width="200" height="170">
+  </div>
+</div>
+
 
 	  	<div class="rightColumn">
-	  		<h2 style="font-family:verdana"><center>Calendar</center></h2>
-	<iframe src="https://calendar.google.com/calendar/embed?height=300&wkst=1&bgcolor=%234285F4&ctz=America%2FChicago&showTz=0&showCalendars=0&showTabs=0&showPrint=0&showDate=1&showNav=0&showTitle=0" style="border:solid 1px #777" width="257" height="300" frameborder="0" scrolling="no"></iframe>
+	  		<h2 style="font-family:verdana"><center>Looky here, its me.</center></h2>
+<div class="ME">
+    <img src="img/me.jpg" alt="Anthony (ME)" width="200" height="260">
+</div>
 	  	</div>
 	<div class="fleftColumn">
 <img id="img" src="img/dog2.jpg" alt="Gio" style="float:left;width:280px;height:375px;"class="imgframe">
+<div class="vid">
+<video width="320" height="500" playsinline autoplay muted loop poster="img/dog1.jpg" id="bgvid">
+
+  <source src="video/dogF.mp4" type="video/mp4">
+</video>
+</div>
 </div>
 
     
